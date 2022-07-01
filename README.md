@@ -3,7 +3,7 @@ HKOJ
 
 MỤC LỤC
 ---
-- [ĐỀ THI ĐỘI TUYỂN HOÀN KIẾM]
+- [ĐỀ THI ĐỘI TUYỂN HOÀN KIẾM](HKContest/HKContest.md)
 - [BÀI TẬP]
 - [TIN TUYỂN HOÀN KIẾM]
 
