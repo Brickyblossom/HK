@@ -4,8 +4,8 @@ HKOJ
 MỤC LỤC
 ---
 - [ĐỀ THI ĐỘI TUYỂN HOÀN KIẾM](HKContest/HKContest.md)
-- [BÀI TẬP]
-- [TIN TUYỂN HOÀN KIẾM]
+- [BÀI TẬP](HKWiki/HKWiki.md)
+- [TIN TUYỂN HOÀN KIẾM](HKWiki/HKWiki.md)
 
 
 TODO LIST
