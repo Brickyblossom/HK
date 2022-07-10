@@ -192,4 +192,202 @@ Một dòng duy nhất chứa số trong hệ đếm cơ số $8$ đã đổi đ
 
     105
    
-  
+
+## Bài 7: Kí tự khác nhau
+
+Cho xâu $S$ tối đa $255$ ký tự gồm các chữ cái, chữ số và dấu cách. Hãy đếm xem xâu $S$ có bao kí tự chữ cái, chữ số khác nhau (chữ cái in thường, in hoa là một).
+
+### Giới hạn:
+
+$0 \le |S| < 256$.
+
+### Input:
+
+Một dòng duy nhất chứa xâu $S$.
+
+### Output:
+
+Số lượng chữ cái, chữ số khác nhau trong $S$.
+
+### Sample Input 1
+
+    Day la 1 test mau
+    
+### Sample Output 1
+
+    10
+
+### Sample Input 2
+
+    hahaha
+
+### Sample Output 2
+
+    2
+
+## Bài 8: Đối xứng
+
+Cho xâu $S$ tối đa $255$ ký tự gồm các chữ cái, chữ số và dấu cách. Hãy kiểm tra xâu $S$ có là xâu đối xứng hay không?
+
+### Giới hạn:
+
+$0 \le |S| < 256$.
+
+### Input: 
+
+Một dòng duy nhất chứa xâu $S$.
+
+### Output: 
+
+Nếu xâu $S$ đối xứng ghi số $1$, còn ngược lại ghi số $0$.
+
+### Sample Input 1
+
+    wordle
+
+### Sample Output 1
+
+    0
+
+### Sample Input 2
+
+    nolemonnomelon
+
+### Sample Output 2
+
+    1
+
+
+## Bài 9: Mười sáu - Nhị phân
+
+Cho xâu $S$ tối đa $50$ kí tự biểu diễn một số trong hệ đếm cơ số $16$. Hãy đổi $S$ từ hệ đếm cơ số $16$ sang hệ đếm nhị phân.
+
+### Giới hạn:
+
+$0\le|S|\le50$.
+
+### Input: 
+
+Một dòng duy nhất chứa xâu $S$.
+
+### Output: 
+
+Một dòng duy nhất chứa số trong hệ nhị phân đã đổi được.
+
+### Sample Input 1
+
+    F
+
+### Sample Output 1
+
+    1111
+
+### Sample Input 2
+
+    FFF
+
+### Sample Output 2
+
+    111111111111
+
+## Bài 10: Đếm xâu
+
+Cho hai xâu $S_1$ và $S_2$ tối đa $255$ kí tự chữ cái. Hãy đếm số lần $S_1$ có trong $S_2$ và chỉ ra các vị trí nếu có.
+
+### Giới hạn:
+
+$0\le|S_1|, |S_2|<256$
+
+### Input: 
+
+Dòng thứ nhất chứa xâu $S_1$, dòng thứ hai chứa xâu $S_2$.
+
+### Output: 
+
+Nếu có $S_1$ trong $S_2$ thì dòng thứ nhất chứa số lần $S_1$ có trong $S_2$; dòng thứ hai là các vị trí bắt đầu của $S_1$ có trong $S_2$. Nếu không có $S_1$ có trong $S_2$ ghi số $0$;
+
+### Sample Input 1
+
+    a
+    aaaa
+
+### Sample Output 1
+
+    4
+    1 2 3 4
+
+### Sample Input 2
+
+    codedi
+    codedicodedicodedi
+    
+### Sample Output 2
+
+    3
+    1 7 13
+
+## Bài 11: Xâu ghép
+
+Cho xâu $S$ tối đa $255$ ký tự gồm các chữ cái, chữ số và dấu cách. Hãy kiểm tra $S$ xem có là ghép của một số lần lớn hơn $1$ của một xâu $X$ nào đó không, nếu là ghép của một số lần xâu $X$ thì đưa ra xâu $X$ dài nhất có thể.
+
+### Giới hạn:
+
+$0\le|S|<256$.
+
+### Input: 
+
+Một dòng duy nhất chứa xâu $S$.
+
+### Output: 
+
+Một dòng duy nhất chứa xâu $X$ dài nhất ghép thành xâu $S$, nếu không có xâu $X$ ghi số $0$.
+
+### Sample Input 1
+
+    Day la 1 test
+    
+### Sample Output 1
+
+    0
+    
+### Sample Input 2
+
+    ACACACAC
+    
+### Sample Output 2
+
+    ACAC
+
+
+## Bài 12: Nhị phân - Mười sáu
+
+Cho xâu $S$ độ dài tối đa $200$ kí tự biểu diễn một số trong hệ đếm nhị phân. Hãy đổi $S$ từ hệ đếm nhị phân sang hệ đếm cơ số $16$.
+
+### Giới hạn:
+
+$0<|S|\le200$.
+
+### Input: 
+
+Một dòng duy nhất chứa xâu $S$.
+
+### Output: 
+
+Một dòng duy nhất chứa số trong hệ đếm cơ số $16$ đã đổi được.
+
+### Sample Input 1
+
+    1010101
+
+### Sample Output 1
+
+    55
+    
+### Sample Input 2
+
+    1101010
+    
+### Sample Output 2
+
+    6A
+
