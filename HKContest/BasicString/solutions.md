@@ -9,15 +9,16 @@ Chú ý trường hợp giả sử xâu input có dấu cách ở đầu, có nh
 ### Code:   
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
     string s;
     getline(cin,s);
     int wc=1;
-    for(int i=0;i<s.length();i++){
-    	if(isspace(s[i])){
+    for(int i=0;i<s.length()-1;i++){
+    	if(s[i]==' '&&s[i+1]!=' '){
     	    wc++;
 	    }
     }
@@ -32,12 +33,13 @@ int main(){
 
 Đặt 1 biến tạm $tmp = 0$ và biến đáp án $ans = 0$.
 
-Duyệt xâu, khi gặp một chữ số thì $tmp$*$=10$ và thêm chữ số. Nếu không gặp chữ số thì cộng $tmp$ vào $ans$ và đặt $tmp = 0$.
+Duyệt xâu, khi gặp một chữ số thì $tmp$ *$=10$ và thêm chữ số. Nếu không gặp chữ số thì cộng $tmp$ vào $ans$ và đặt $tmp = 0$.
 
 ### Code:
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
@@ -45,7 +47,7 @@ int main(){
 	getline(cin,s);
 	int ans=0,tmp=0;
 	for(int i=0;i<s.length();i++){
-		if(isdigit(s[i])){
+		if('0'<=s[i]&&s[i]<='9'){
             tmp=tmp*10+(s[i]-'0');
 		}
 		else{
@@ -80,7 +82,8 @@ Duyệt xâu chữ số, cộng $ans$ với chữ số * $tmp$, $tmp$ *$=16$.
 ### Code:
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
@@ -102,9 +105,11 @@ int main(){
 ```
 
 #### Cách 2:
-Dùng `std:hex` (trong thư viện `<ios>`) và in ra. Cách này thực hiện được cũng do đáp án nằm trong khoảng `long long`. 
+Nhập vào số dùng `std::hex` (trong thư viện `<ios>`; số nhập vào sẽ được tự động đánh dấu là dạng thập lục phân và lưu dưới dạng thập phân) và in ra. Cách này thực hiện được cũng do đáp án nằm trong khoảng `long long`. 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
+#include<ios>
 using namespace std;
 
 int main(){
@@ -119,40 +124,41 @@ int main(){
 
 ### Lời giải:
 
-Xóa các phần tử dấu cách ở đầu.
-Chạy for; nếu gặp dấu cách, nếu kí tự tiếp theo là dấu cách thì xóa kí tự đó. Lưu ý lùi i đi 1. Đặt 1 biến bool ban đầu true; nếu biến là true thì kí tự được viết hoa và biến = false, còn lại kí tự được viết thường.
+Bỏ qua các dấu cách ở đầu và dấu cách thừa (các dấu cách nằm ngay sau một dấu cách). Đặt 1 biến `bool` $opening = true$; nếu biến là $true$ thì kí tự được viết hoa và gán biến bằng $false$, còn lại kí tự được viết thường.
 
 ### Code:   
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
-	string s;
+	string s,t="";
 	getline(cin,s);
 	bool opening=true;
-	while(isspace(s[0])){
-		s.erase(0,1);
+	int i=0;
+	while(s[i]==' '){
+		i++;
 	}
-	for(int i=0;i<s.length();i++){
-		if(isspace(s[i])){
+	for(;i<s.length();i++){
+		if(s[i]==' '){
+			t+=' ';
 			opening=true;
-			if(isspace(s[i+1])){
-				s.erase(i+1,1);
-				i--;
+			if(s[i+1]==' '){
+				i++;
 			}
 			continue;
 		}
-		if(opening){
-			s[i]=toupper(s[i]);
+		else if(opening){
+			t+=toupper(s[i]);
 			opening=false;
 		}
 		else{
-			s[i]=tolower(s[i]);
+			t+=tolower(s[i]);
 		}
 	}
-	cout<<s;
+	cout<<t;
     return 0;
 }
 ```
@@ -161,19 +167,20 @@ int main(){
 
 ### Lời giải:
 
-Chạy for, nếu gặp dấu cách thì in kí tự xuống dòng, nếu không in ra kí tự tiếp theo.
+Duyệt xâu, nếu gặp dấu cách thì in kí tự xuống dòng, nếu không in ra kí tự tiếp theo.
 
 ### Code:
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
 	string s;
 	getline(cin,s);
 	for(int i=0;i<s.length();i++){
-		if(isspace(s[i])){
+		if(s[i]==' '){
 			cout<<endl;
 		}
 		else cout<<s[i];
@@ -182,18 +189,21 @@ int main(){
 }
 ```
 
-## Bài 6: Tách tên
+## Bài 6: Nhị phân - Bát phân
 
 ### Lời giải:
-Cách 1:
-Quy đổi mỗi bộ 3 chữ số nhị phân thành 1 chữ số bát phân.
-Nếu độ dài dãy nhị phân là số không chia hết cho 3 thì thêm 1 hoặc chữ số 0 ở đầu để thỏa mãn.
-Với mỗi bộ 3 chữ số, nhân mỗi chữ số với 2^(thứ tự từ phải qua trái bắt đầu từ 0): số thứ 1 nhân 4, số thứ 2 nhân 2 và số thứ 3 giữ nguyên.
+
+Quy đổi mỗi bộ $3$ chữ số nhị phân thành $1$ chữ số bát phân.
+Nếu độ dài dãy nhị phân là số không chia hết cho $3$ thì thêm các chữ số $0$ ở đầu để thỏa mãn.
+
+
+Với mỗi bộ 3 chữ số, nhân mỗi chữ số với $2^x$ (với $x$ là thứ tự từ phải qua trái bắt đầu từ $0$): số thứ 1 nhân $4$, số thứ 2 nhân $2$ và số thứ 3 giữ nguyên.
 
 ### Code:
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 
@@ -207,35 +217,11 @@ int main(){
 	else if(s.length()%3==2){
 		s="0"+s;
 	}
-	for(int i=0;i<s.length();i+=3){        ans+=to_string(4*(s[i]-'0')+2*(s[i+1]-'0')+(s[i+2]-'0'));
+	for(int i=0;i<s.length();i+=3){
+    	ans+=to_string(4*(s[i]-'0')+2*(s[i+1]-'0')+(s[i+2]-'0'));
 	}
 	cout<<ans;
     return 0;
-}
-```
-
-Cách 2 (CHỈ ÁP DỤNG VỚI TEST NHỎ):
-
-Quy đổi dãy nhị phân về số thập phân và chuyển sang bát phân (có thể dùng std::oct trong <ios>)
-Quy đổi nhị phân về thập phân tương tự bài TLPTP, mỗi chữ số nhị phân nhân với biến tạm ứng với 2^(vị trí chữ số)
-Tuy nhiên, cách này không khả thi do giới hạn của đáp án vượt quá giới hạn long long
-
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-
-
-int main(){
-	string s;
-	cin>>s;
-	string ans="";
-	long long dec=0,tmp=1;
-	for(int i=s.length()-1;i>=0;i--){
-		dec+=(s[i]-'0')*tmp;
-		tmp*=2;
-	}
-	cout<<oct<<dec;
-     return 0;
 }
 ```
 
@@ -243,14 +229,17 @@ int main(){
 
 ### Lời giải:
 
-Đặt 1 mảng lưu việc xuất hiện của các chữ cái và chữ số.
-Chạy for, nếu là chữ cái/chữ số thì phần tử tương ứng trong mảng = true.
+Đặt một mảng lưu việc xuất hiện của các chữ cái và chữ số.
+
+Duyệt xâu, nếu là chữ cái/chữ số thì phần tử tương ứng trong mảng = true.
 (ở đây phần tử 1-26 là chữ cái và 27-36 là chữ số)
 
 ### Code:
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
+#include<cctype>
 using namespace std;
 
 int main(){
@@ -280,14 +269,15 @@ int main(){
 ## Bài 8: Đối xứng
 
 ### Lời giải:
-Kiểm tra kí tự thứ i có bằng kí tự vị trí đối xứng (độ dài xâu - i); nếu khác thì in 0 và dừng chương trình.
-Chú ý xâu bắt đầu từ 0: thay vì s.length()-i thì để s.length()-i-1.
-Chạy for i từ 0 đến s.length()/2 đảm bảo cả trường hợp độ dài xâu lẻ hay chẵn do phép chia số nguyên luôn làm tròn xuống -> không duyệt phần tử chính giữa nếu xâu có độ dài lẻ.
+Kiểm tra kí tự thứ $i$ có bằng kí tự vị trí đối xứng $length - i -1$ (với $length$ là độ dài xâu) ; nếu khác thì in $0$ và dừng chương trình (chú ý xâu bắt đầu từ $0$).
+
+Duyệt xâu với $i$ từ $0$ đến $\frac{length}{2}$ đảm bảo cả trường hợp độ dài xâu lẻ hay chẵn do phép chia số nguyên luôn làm tròn xuống $\rightarrow$ không duyệt phần tử chính giữa nếu xâu có độ dài lẻ.
 
 ### Code:
 
 ```cpp
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main(){
