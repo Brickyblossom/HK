@@ -294,11 +294,138 @@ int main(){
 }
 ```
 
-
 ## Bài 9: Mười sáu - Nhị phân
+
+### Lời giải:
+Tương tự bài Nhị phân - Bát phân, mỗi chữ số trong hệ thập lục phân tương ứng với $4$ chữ số nhị phân.
+
+Chú ý bỏ qua các chữ số $0$ ở đầu.
+
+### Code:
+```cpp
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+	string s,ans="";
+	cin>>s;
+	for(int i=0;i<s.length();i++){
+		int tmp=((s[i]<='F'&&s[i]>='A')?s[i]-55:s[i]-'0');
+		string t="";
+		for(int j=0;j<4;j++){
+			t+=(tmp%2+'0');
+			tmp/=2;
+		}
+		for(int j=t.length()-1;j>=0;j--){
+            ans+=t[j];
+        }
+	}
+    int i=0;
+	while(ans[i]=='0')i++;
+    for(;i<=ans.length();i++){
+        cout<<ans[i];
+    }
+    return 0;
+}
+```
 
 ## Bài 10: Đếm xâu
 
+### Lời giải:
+Để kiểm tra số lần xuất hiện một xâu $S_1$ trong xâu $S_2$, ta kiểm tra với mọi kí tự của $S_2$ có trùng với kí tự đầu tiên của $S_1$ không. Nếu có, tiếp tục xét kí tự tiếp theo của $S_2$ với kí tự thứ 2 của $S_1$, và tiếp tục như thế đến khi hết độ dài của 1 trong 2 xâu hoặc gặp vị trì mà kí tự của 2 xâu khác nhau. Nếu tìm được một lần xuất hiện xâu $S_1$ trong $S_2$ thì tăng biến đếm $cnt$ lên 1 và thêm vị trí xuất hiện kí tự đầu tiên trên của $S_1$ vào mảng đếm.
+
+### Code:
+```cpp
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+    string s1,s2;
+    cin>>s1>>s2;
+    int cnt=0;
+    int appear[300];
+    for(int i=0;i<s2.length();i++){
+        int tmp=0;
+        int k=i;
+        for(int j=0;j<s1.length(),k<s2.length();j++){
+            if(s2[k]==s1[j]){
+            	tmp++;
+            	k++;
+            }
+            else break;
+        }
+        if(tmp==s1.length()){
+            appear[cnt++]=i+1;
+        }
+    }
+    cout<<cnt<<endl;
+    for(int i=0;i<cnt;i++){
+        cout<<appear[i]<<" ";
+    }
+}
+```
+
 ## Bài 11: Xâu ghép
 
+### Lời giải:
+Để lấy độ dài lớn nhất ta chạy for từ độ dài lớn nhất có thể của xâu con là $n/2$ về $1$. Với mỗi độ dài xét xem xâu con hiện tại có trùng với xâu đầu tiên không bằng cách xét mọi vị trí $j$ và $j\%i$ với $i$ là độ dài đang xét.
+
+### Code:
+```cpp
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+	string s;
+	getline(cin,s);
+	long long n=s.length();
+	for(int i=n/2;i>1;i--){
+		bool chk=true;
+		for(int j=i;j<n;j++){
+			if(s[j]!=s[j%i]){
+				chk=false;
+				break;
+			}
+		}
+		if(chk){
+			cout<<s.substr(0,i)<<endl;
+			return 0;
+		}
+	}
+	cout<<0;
+    return 0;
+}
+```
+
 ## Bài 12: Nhị phân - Mười sáu
+
+### Lời giải:
+Tương tự bài Mười sáu - Nhị phân. Mỗi $4$ chữ số nhị phân tương ứng với một chữ số thập lục phân.
+
+### Code:
+```cpp
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+	string s,ans="";
+	cin>>s;
+	for(int i=1;i<=(s.length()%4);i++){
+		s='0'+s;
+	}
+	for(int i=0;i<s.length();i+=4){
+		int tmp=0,cnt=1;
+		for(int j=0;j<4;j++){
+			tmp+=(s[i+3-j]-'0')*cnt;
+			cnt*=2;
+		}
+		ans+=char((tmp<10)?(tmp+'0'):(tmp+55));
+	}
+	cout<<ans<<endl;
+    return 0;
+}
+```
