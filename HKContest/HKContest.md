@@ -3,30 +3,47 @@
 
 
 
-| Danh sách      | Test | Sol  | Link |
-|:-------------- |:---- | ---- |:---- |
-| HSG HK 2020 v1 | done |      |      |
-| HSG HK 2020 v2 | done |      |      |
-| HSG HK 2020 v3 | done |      |      |
-|                |      |      |      |
-| Text           | Text | Text |      |
+| Danh sách       | Test | Sol  | Link |
+|:--------------- |:---- | ---- |:---- |
+| HSG HK 2020 v1  | done | 0    |      |
+| HSG HK 2020 v2  | done | 0    |      |
+| HSG HK 2020 v3  | done | 0    |      |
+|                 |      |      |      |
+| HK Contest 1    | done | 0    |      |
+|                 |      |      |      |
+| HSG HN 2014     | done | 0    |      |
+| HSG HN 2015     | done | 0    |      |
+| HSG HN 2016     | done | 0    |      |
+| HSG HN 2017     | done | 0    |      |
+| HSG HN 2018     | done | 0    |      |
+| HSG HN 2019     | done | 0    |      |
+| HSG HN 2020     | done | 0    |      |
+| HSG HN 2021     | done | 0    |      |
+| HSG HN 2022     | done | 0    |      |
+| THT HK 2021     | done | 0    |      |
+| THT HK 2022     | done | 0    |      |
+|                 |      |      |      |
+|                 |      |      |      |
+| Basic string    |      |      |      |
+| Basic loop      |      |      |      |
+| Basic array     |      |      |      |
+| Basic 2D array  |      |      |      |
+| Basic DP 1      |      |      |      |
+| Basic DP 2      |      |      |      |
+| Basic DP 3      |      |      |      |
+| Basic backtrack |      |      |      |
+|                 |      |      |      |
+| BT 01           |      |      |      |
+| BT 02           |      |      |      |
+| BT 03           |      |      |      |
+| BT 04           |      |      |      |
+| BT 05           |      |      |      |
+| BT 06           |      |      |      |
+| BT 07           |      |      |      |
+| BT 08           |      |      |      |
+|                 |      |      |      |
+|                 |      |      |      |
+| TS LQD 2022     |      |      |      |
+|                 |      |      |      |
+| Text            | Text | Text |      |
 
-
-## HSG HOÀN KIẾM 2020 vòng 1
-
-### BÀI 1 (PRIME.CPP | PRIME.INP | PRIME.OUT )
-Thầy Đăng vừa đọc được một bài toán thú vị: Có tồn tại hay không một số gồm toàn số $1$ chia hết cho một số nguyên tố $p$ nào đó.
-
-Thầy liền nghĩ ra và đố bạn một bài toán khác: Liệu có tồn tại hay không một số gồm toàn số $k$ chia hết cho số nguyên tố $p$? Nếu có, hãy chỉ ra số bé nhất thỏa mãn.
-
-#### Input:
-Một dòng gồm hai số nguyên $k$ và số nguyên tố $p$. $(1 \le k \le 9$, $7 \le p \le 10^5$, đàm bảo $p$ là số nguyên tố$)$.
-
-#### Output: 
-Một số tự nhiên thỏa mãn đề bài. Nếu không tồn tại số thỏa mãn, hãy in ra $-1$.
-
-#### Sample Input
-    2 7
-
-#### Sample Output
-    222222
