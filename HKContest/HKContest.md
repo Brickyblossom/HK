@@ -1,4 +1,4 @@
-# ĐỀ THI ĐỘI TUYỂN HOÀN KIẾM
+# ĐỀ THI + ĐỀ LUYỆN ĐỘI TUYỂN HOÀN KIẾM
 
 
 
@@ -24,7 +24,7 @@
 | THT HK 2022     | done | 0    |      |
 |                 |      |      |      |
 |                 |      |      |      |
-| Basic string    |      |      |      |
+| Basic string    | done | done |      |
 | Basic loop      |      |      |      |
 | Basic array     |      |      |      |
 | Basic 2D array  |      |      |      |
@@ -32,6 +32,8 @@
 | Basic DP 2      |      |      |      |
 | Basic DP 3      |      |      |      |
 | Basic backtrack |      |      |      |
+| Basic Flood Fill| done |      |      |
+| Basic Graph     |      |      |      |
 |                 |      |      |      |
 | BT 01           |      |      |      |
 | BT 02           |      |      |      |
@@ -45,5 +47,5 @@
 |                 |      |      |      |
 | TS LQD 2022     |      |      |      |
 |                 |      |      |      |
-| Text            | Text | Text |      |
+|                 |      |      |      |
 
