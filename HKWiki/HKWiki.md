@@ -1,12 +1,12 @@
 # TIN TUYỂN HOÀN KIẾM
 
 
-### List of topic
+### List of topics
 
 
 |               | TOPIC | TÌNH TRẠNG | Nội dung |
 |:------------- |:----- | ---------- |:-------- |
-| Basic cpp     |       |            |          |
+| Basic CPP     |       |            |          |
 | Complexity    |       |            |          |
 | Greedy        |       |            |          |
 | Basic DP      |       |            |          |
@@ -21,7 +21,7 @@
 | Basic math    |       |            |          |
 | Prime         |       |            |          |
 | Modular       |       |            |          |
-| Combinartoric |       |            |          |
+| Combinartorics|       |            |          |
 | Xử lý string  |       |            |          |
 | Bignum        |       |            |          |
 |               |       |            |          |

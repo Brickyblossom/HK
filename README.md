@@ -13,14 +13,14 @@ TODO LIST
 
 | Việc cần làm            | Nội dung | Tình trạng |
 |:----------------------- | -------- | ---------- |
-| Chuyển docs -> Hackmd   |          |            |
-| Sols & codes            |          |            |
-| Gắn tags, phân loại bài |          |            |
+| Chuyển Google Docs -> Markdown |          |            |
+| Sol & code              |          |            |
+| Gắn tag, phân loại bài  |          |            |
 | Nghĩ thêm bài           |          |            |
 | Sinh test               |          |            |
 | Nghĩ thêm việc cần làm  |          |            |
 
-USEFUL RESOURCE
+USEFUL RESOURCES
 ---
 - [cp-algo](https://cp-algorithms.com/)
 - [VNOI wiki](https://vnoi.info/wiki/Home)
