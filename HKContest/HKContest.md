@@ -3,7 +3,7 @@
 
 
 
-| Danh sách       | Test | Sol  | Link |
+| Danh sách       | Test | Sol  | Links|
 |:--------------- |:---- | ---- |:---- |
 | HSG HK 2020 v1  | done | 0    |      |
 | HSG HK 2020 v2  | done | 0    |      |
